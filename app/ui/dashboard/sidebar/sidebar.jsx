@@ -10,8 +10,7 @@ import {
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
-} from "react-icons/md"
-// data for sidebar
+} from "react-icons/md";
 const menuItems = [
   {
     title: "Pages",
@@ -76,7 +75,13 @@ const menuItems = [
 ]
 const Sidebar = () => {
   return (
-    <div className={styles.container}>sidebar</div>
+    <div className={styles.container}>
+      <ul>
+        {menuItems.map((cat) => (
+          <li key={cat.title}>{cat.title}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
