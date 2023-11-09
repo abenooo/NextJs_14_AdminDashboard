@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
 import {
@@ -77,6 +78,20 @@ const menuItems = [
 const Sidebar = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.user}>
+        <Image
+          className={styles.userImage}
+          src="/noavatar.png"
+          alt="profile img"
+          height="50"
+          width="50"
+        />
+
+        <div className={styles.userDetails}>
+          <span className={styles.userName}>Abenezer Kifle</span>
+          <span className={styles.userTitle}>Administrator</span>
+        </div>
+      </div>
       <ul>
         {menuItems.map((cat) => (
           <li key={cat.title}>
