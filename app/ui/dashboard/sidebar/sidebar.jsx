@@ -104,6 +104,12 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      {/* logout button */}
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+
+      </button>
     </div>
   );
 };

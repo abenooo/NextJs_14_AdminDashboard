@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 const MenuLink = ({item}) => {
   // const usepathname to get the url
 const pathname = usePathname()
-console.log(pathname);
+// console.log(pathname);
   return (
     <Link href={item.path} className={`${styles.container} ${pathname === item.path && styles.active}`}>
         {item.icon}
