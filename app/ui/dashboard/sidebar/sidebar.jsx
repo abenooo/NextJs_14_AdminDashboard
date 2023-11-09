@@ -1,4 +1,5 @@
-import styles from "./sidebar.module.css"
+import MenuLink from "./menuLink/menuLink";
+import styles from "./sidebar.module.css";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -18,22 +19,22 @@ const menuItems = [
       {
         title: "Dashboard",
         path: "/dashboard",
-        icon: <MdDashboard />
+        icon: <MdDashboard />,
       },
       {
         title: "Users",
         path: "/dashboard/users",
-        icon: <MdSupervisedUserCircle />
+        icon: <MdSupervisedUserCircle />,
       },
       {
         title: "Products",
         path: "/dashboard/products",
-        icon: <MdShoppingBag />
+        icon: <MdShoppingBag />,
       },
       {
         title: "Transactions",
         path: "/dashboard/transactions",
-        icon: <MdAttachMoney />
+        icon: <MdAttachMoney />,
       },
     ],
   },
@@ -43,17 +44,17 @@ const menuItems = [
       {
         title: "Revenue",
         path: "/dashboard/revenue",
-        icon: <MdWork />
+        icon: <MdWork />,
       },
       {
         title: "Reports",
         path: "/dashboard/reports",
-        icon: <MdAnalytics />
+        icon: <MdAnalytics />,
       },
       {
         title: "Teams",
         path: "/dashboard/teams",
-        icon: <MdPeople />
+        icon: <MdPeople />,
       },
     ],
   },
@@ -63,26 +64,33 @@ const menuItems = [
       {
         title: "Settings",
         path: "/dashboard/settings",
-        icon: <MdOutlineSettings />
+        icon: <MdOutlineSettings />,
       },
       {
         title: "Help",
         path: "/dashboard/help",
-        icon: <MdHelpCenter />
+        icon: <MdHelpCenter />,
       },
     ],
   },
-]
+];
 const Sidebar = () => {
   return (
     <div className={styles.container}>
       <ul>
         {menuItems.map((cat) => (
-          <li key={cat.title}>{cat.title}</li>
+          <li key={cat.title}>
+            <span className={styles.cat}>{cat.title}</span>
+            {/* map the list and pass the data to menu componet  */}
+            {cat.list.map((item) => (
+              <MenuLink item={item} key={item.title} />
+            ))}
+            {}
+          </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
