@@ -1,6 +1,9 @@
+import styles from "./card.module.css"
 const Card = () => {
   return (
-    <div>card</div>
+    <div>
+    <div className={styles.cards}>card</div>
+    </div>
   )
 }
 
