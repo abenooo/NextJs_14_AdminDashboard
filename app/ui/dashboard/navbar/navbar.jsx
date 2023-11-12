@@ -7,7 +7,7 @@ import {
   MdNotifications,
   MdPublic,
 } from "react-icons/md";
-const navbar = () => {
+const Navbar = () => {
   const pathname = usePathname();
 
   return (
@@ -33,4 +33,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
