@@ -2,6 +2,7 @@ import Search from "@/componet/dashboard/search.jsx/search";
 import styles from "../../../componet/user/user.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Pagination from "@/componet/pagination/pagination";
 const UsersPage = () => {
   return (
     <div className={styles.container}>
@@ -54,6 +55,8 @@ const UsersPage = () => {
           </tr>
         </tbody>
       </table>
+
+      <Pagination />
     </div>
   );
 };
