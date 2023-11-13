@@ -1,5 +1,5 @@
-import Search from "@/app/ui/dashboard/search.jsx/search";
-import styles from "@/app/ui/user/user.module.css";
+import Search from "@/ui/dashboard/search.jsx/search";
+import styles from "../../../ui/user/user.module.css";
 import Image from "next/image";
 import Link from "next/link";
 const UsersPage = () => {
