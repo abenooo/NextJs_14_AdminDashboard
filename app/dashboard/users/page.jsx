@@ -37,17 +37,20 @@ const UsersPage = () => {
                 John Doe
               </div>
             </td>
-<td>john@gmail.com</td>
-<td>13.11.2023</td>
-<td>Admin</td>
-<td>Active</td>
-<td>
-  <Link href="/">
-  <button className={`${styles.button} ${styles.view}`}>View</button>
-  </Link>
-  <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-</td>
-
+            <td>john@gmail.com</td>
+            <td>13.11.2023</td>
+            <td>Admin</td>
+            <td>Active</td>
+            <td>
+              <Link href="/">
+                <button className={`${styles.button} ${styles.view}`}>
+                  View
+                </button>
+              </Link>
+              <button className={`${styles.button} ${styles.delete}`}>
+                Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
