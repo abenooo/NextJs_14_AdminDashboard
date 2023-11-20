@@ -1,7 +1,15 @@
+import styles from "../../componet/login/login.module.css";
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
-  )
-}
+    <div className={styles.container}>
+      <form action="" className={styles.form}>
+        <h1 className={styles.loginText}>Login</h1>
+        <input type="text" placeholder="username" />
+        <input type="password" placeholder="password" />
+        <button>Login</button>
+      </form>
+    </div>
+  );
+};
 
-export default LoginPage
+export default LoginPage;
