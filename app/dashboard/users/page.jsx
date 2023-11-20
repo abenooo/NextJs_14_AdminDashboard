@@ -3,7 +3,12 @@ import styles from "../../../componet/user/user.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Pagination from "@/componet/pagination/pagination";
-const UsersPage = () => {
+import { fetchUsers } from "@/app/lib/data";
+const UsersPage = async() => {
+  const users = await fetchUsers();
+  // console.log(users, "users");
+
+  
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -25,7 +30,8 @@ const UsersPage = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
+        {users.map(user => (
+          <tr key={user.id}>
             <td>
               <div className={styles.user}>
                 <Image
@@ -35,15 +41,15 @@ const UsersPage = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                {user.username}
               </div>
             </td>
-            <td>john@gmail.com</td>
-            <td>13.11.2023</td>
-            <td>Admin</td>
-            <td>Active</td>
+            <td>{user.email}</td>
+            <td>{user.createdAt?.toString()}</td>
+            <td>{user.isAdmin ? "Admin" : "Client"}</td>
+            <td>{user.isActive ? "Active" : "not Active"}</td>
             <td>
-              <Link href="/dashboard/users/test">
+              <Link href="/dashboard/users/${user.id}">
                 <button className={`${styles.button} ${styles.view}`}>
                   View
                 </button>
@@ -53,6 +59,7 @@ const UsersPage = () => {
               </button>
             </td>
           </tr>
+               ))}
         </tbody>
       </table>
 
