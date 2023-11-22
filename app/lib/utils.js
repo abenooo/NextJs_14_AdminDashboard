@@ -7,6 +7,6 @@ export const connectToDB = async () => {
     connection.isConnected = db.connections[0].readyState;
   } catch (error) {
     console.log(error ,"error");
-    throw new Error(error);
+    // throw new Error(error);
   }
 };
