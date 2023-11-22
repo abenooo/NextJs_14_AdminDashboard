@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Pagination from "@/componet/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
+import moment from 'moment';
 const UsersPage = async() => {
   const users = await fetchUsers();
   // console.log(users, "users");
@@ -45,7 +46,7 @@ const UsersPage = async() => {
               </div>
             </td>
             <td>{user.email}</td>
-            <td>{user.createdAt?.toString().slice(4,16)}</td>
+            <td>{moment(user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</td>
             <td>{user.isAdmin ? "Admin" : "Client"}</td>
             <td>{user.isActive ? "Active" : "not Active"}</td>
             <td>
